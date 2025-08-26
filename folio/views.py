@@ -20,5 +20,6 @@ def layout(request):
 def experience(request):
     return render(request, 'folio/experience.html')
 
-def projects(request):
-    return render(request, 'folio/projects.html')
+def awards(request):
+    return render(request, 'folio/awards.html')
+
