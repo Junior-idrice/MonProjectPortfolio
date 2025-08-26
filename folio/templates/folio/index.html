@@ -1,12 +1,21 @@
 {%extends 'folio/layout.html'%} 
 {%load static%}
+
+{%block style%}
+<style>
+    .custom-shadow{
+        background-color: rgb(221, 231, 234);
+       
+    }
+</style>
+{%endblock%}
 {%block content%}
 
             <!--SHOW CASE SECTION-->
                     <section class="bg-light text-dark p-5 p-lg-0 pt-lg-4 text-center text-sm-start">
                 <div class="container">
                     <div class="d-sm-flex align-items-center justify-content-between">
-                        <img class="img-fluid w-50 d-sm-block rounded-circle" src="media/products/image.jpg" alt="ey">
+                        <img class="mt-5 img-fluid w-50 d-sm-block rounded-circle" src="media/products/image.jpg" alt="ey">
                         <div class="ms-5">
                             <h1>Who is <span class="text-info">Idrice junior ?</span></h1>
                             <p class="lead my-4 border p-2"><span class="text-secondary fw-bold">Education:</span> dolor sit amet consectetur adipisicing elit.
@@ -59,17 +68,28 @@
             </section>
 
             <!--    Contact info -->
+                <section class="p-5 d-flex justify-content-center align-items-center custom-shadow" >
+                 <form method="POST">
+                    {%csrf_token%}
+                    <h2 class="text-center fw-bold">Get In Touch</h2>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" name="name"class="form-control"  name="name" id="name" placeholder="IdriceJr">
+                        </div>
+                         <div class="mb-3">
+                            <label for="Email address" class="form-label">Email address</label>
+                            <input type="email" name="email" class="form-control" id="Email address" placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="text" class="form-label">Text</label>
+                            <textarea class="form-control" name="text" id="text" rows="3"></textarea>
+                       </div>
+                       <button type="submit" class="btn btn-secondary">Send</button>
+                </form>
+                </section>
+               
               
 
-            <section class="p-5 d-flex justify-content-center align-items-center">
-            <div class="container-fluid">
-            <div class="row justify-content-center">
-            <div class="col-md-6">
-                <h2 class="text-center">Get In Touch</h2>
-               
-            </div>
-            </div>
-        </div>
-</section>
+           
 
 {%endblock%}
