@@ -13,7 +13,7 @@ def index(request):
         email = request.POST.get('email')
         text = request.POST.get('text')
         message = f"From: {name}\nEmail: {email}\n\nMessage:\n{text}"
-        form = Contact(name=name, email=email, text=text)
+        
         
 
         send_mail(
