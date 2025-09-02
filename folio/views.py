@@ -14,7 +14,7 @@ def index(request):
         text = request.POST.get('text')
         message = f"From: {name}\nEmail: {email}\n\nMessage:\n{text}"
         form = Contact(name=name, email=email, text=text)
-        form.save()
+        
 
         send_mail(
             subject=f"New Contact Form Submission from {name}",
